@@ -14,13 +14,22 @@
   и выводя на экран результаты
 
 """
+def comparison(one, two):
+  if (type(one) != type(two)):
+    return 0
+  elif (one == two):
+    return 1
+  elif (one != two and len(one) > len(two)):
+    return 2
+  elif (one != two and two == 'learn'): #Отсутствует приоретизация на уровне постоновки задачи
+    return 3
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    print(comparison('строка 1', 0)) #0
+    print(comparison('строка 1', 'строка 1')) #1
+    print(comparison('строка 1', 'строк')) #2
+    print(comparison('строка 1', 'learn')) #2
+    print(comparison('стр', 'learn')) #3
     
 if __name__ == "__main__":
     main()
